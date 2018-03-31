@@ -9,4 +9,4 @@ services:
       DATABASE_URL: http//account-database
       
   account-database:
-    image: jzaccone/account-database
+    image: nelsonabmdocker/account-database

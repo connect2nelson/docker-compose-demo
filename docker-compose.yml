@@ -3,7 +3,7 @@ version: "3"
 services:
 
   account-database:
-    image: jzaccone/account-database
+    image: nelsonabmdocker/account-database
     build:
       context: ./account-database
     # set default mysql root password, change as needed
@@ -16,7 +16,7 @@ services:
     restart: always
 
   compute-interest-api:
-    image: jzaccone/compute-interest-api
+    image: nelsonabmdocker/compute-interest-api
     build: 
       context: ./compute-interest-api
     ports:
@@ -26,14 +26,14 @@ services:
       - "account-database"
   
   account-summary:
-    image: jzaccone/account-summary
+    image: nelsonabmdocker/account-summary
     build: 
       context: ./account-summary
     ports:
       - "5001:80"
 
   transaction-generator:
-    image: jzaccone/transaction-generator
+    image: nelsonabmdocker/transaction-generator
     build:
       context: ./transaction-generator
     restart: always

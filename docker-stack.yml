@@ -3,7 +3,7 @@ version: "3"
 services:
 
   account-database:
-    image: jzaccone/account-database
+    image: nelsonabmdocker/account-database
     # set default mysql root password, change as needed
     environment:
       MYSQL_ROOT_PASSWORD: password
@@ -13,7 +13,7 @@ services:
         condition: on-failure
 
   compute-interest-api:
-    image: jzaccone/compute-interest-api
+    image: nelsonabmdocker/compute-interest-api
     ports:
       - "8080:8080" 
     deploy:
@@ -24,7 +24,7 @@ services:
       - "account-database"
 
   account-summary:
-    image: jzaccone/account-summary
+    image: nelsonabmdocker/account-summary
     ports:
       - "5001:80"
     deploy:
@@ -33,7 +33,7 @@ services:
         condition: on-failure
 
   transaction-generator:
-    image: jzaccone/transaction-generator
+    image: nelsonabmdocker/transaction-generator
     deploy:
       replicas: 1
       restart_policy:
